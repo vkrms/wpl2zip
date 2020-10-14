@@ -1,0 +1,21 @@
+{
+    "name": "vkrms/wpl2zip",
+    "description": "Prepare a windows playlist for DJaying",
+    "type": "project",
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "vkrms",
+            "email": "april504@yandex.ru"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Vkrms\\Wpl2zip\\":
+          "inc/classes"
+      }
+    },
+    "require": {
+        "laravie/parser": "^2.1.2"
+    }
+}
