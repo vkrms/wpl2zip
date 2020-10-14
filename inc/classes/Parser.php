@@ -27,8 +27,6 @@ class Parser
             echo copy($path, $outputFolder.'\\'.$filename) ? "$path copied \r\n" : "\033[31m copy failed on $path \033[37\r\n";
         }
 
-        // print_r($paths);
-
         return;
     }
 }
