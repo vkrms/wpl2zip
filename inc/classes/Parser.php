@@ -10,7 +10,7 @@ class Parser
     {
         // create folder
         if (!is_dir($outputFolder)) {
-            mkdir($outputFolder, 0755);
+            mkdir($outputFolder, 0755, 'recursive');
         }
 
         // parse wpl
