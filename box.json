@@ -1,7 +1,7 @@
 {
     "chmod": "0755",
     "main": "main.php",
-    "output": "dist\wpl2zip.phar",
+    "output": "dist/wpl2zip.phar",
 
     "directories": ["inc"],
     "finder": [
