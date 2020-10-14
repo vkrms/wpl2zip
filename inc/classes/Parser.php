@@ -20,7 +20,7 @@ class Parser
         ]);
 
         foreach ($parsed['media'] as $media) {
-            $path = str_replace('..', 'G:\Music', $media['src']);
+            $path = str_replace('..\\', 'G:\Music\\', $media['src']);
             $paths[] = $path;
             $pathChunks = explode('\\', $path);
             $filename = array_pop($pathChunks);
