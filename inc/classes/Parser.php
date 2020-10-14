@@ -24,7 +24,7 @@ class Parser
             $paths[] = $path;
             $pathChunks = explode('\\', $path);
             $filename = array_pop($pathChunks);
-            echo copy($path, $outputFolder.'\\'.$filename) ? "$path copied \r\n" : "copy failed on $path \r\n";
+            echo copy($path, $outputFolder.'\\'.$filename) ? "$path copied \r\n" : "\033[31m copy failed on $path \033[37\r\n";
         }
 
         // print_r($paths);
