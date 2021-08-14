@@ -48,7 +48,16 @@ $parser = new Parser($playlistPath);
 // create folder
 if (!is_dir($folder)) {
     mkdir($folder, 0755, 'recursive');
+} else {
+// remove existing files
+    $files = glob($folder);
+    foreach ($files as $file) {
+        if (is_file($file)) {
+            unlink($file);
+        }
+    }
 }
+
 
 function getFilename($index, $path)
 {
@@ -72,6 +81,7 @@ if (array_search('--zip', $argv) || array_search('-z', $argv)) {
     return;
 }
 
+// copy files
 foreach ($parser->paths as $index => $path) {
     $filename = getFilename($index, $path);
     echo copy($path, $folder.'\\'.$filename)
@@ -79,3 +89,6 @@ foreach ($parser->paths as $index => $path) {
         // escaped thingies are windows console color codes
         : "\033[31m copy failed on $path \033[37m\r\n";
 }
+
+// open folder
+exec("EXPLORER /E,$folder");
